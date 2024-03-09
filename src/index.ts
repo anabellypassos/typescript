@@ -107,9 +107,9 @@ function greeting(name: string, greet?: string): void{
 
 if(greet){
     console.log(`Olá ${greet} ${name}`);
- return;
+return;
     
-   
+
 }
 console.log(`Olá ${name}`);
 }
@@ -133,8 +133,36 @@ function mutiplyNumbers(nums: MathFunctionParams){
 }
 
 const someNumbers:MathFunctionParams = {
- n1: 345,
- n2: 10   
+n1: 345,
+n2: 10   
 }
 
 console.log(mutiplyNumbers(someNumbers));
+
+
+//narrowing
+// checagem de tipos
+
+function doSonething(info: number | boolean ){
+    if(typeof info == "number" ){
+    console.log  (`o numero è ${info}`)
+    return
+    }
+    console.log("Não foi passado um número");
+
+}
+doSonething(5);
+doSonething(true);
+//generics
+function showArraysitens<T>(arr: T []){
+    arr.forEach((item) => {
+        console.log(`ITEM:${item}`)
+    }
+    )
+
+}
+const a1 = [1,2,3]
+const a2 = ["a","b","c"]
+
+showArraysitens(a1)
+showArraysitens(a2)

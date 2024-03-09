@@ -94,3 +94,24 @@ const someNumbers = {
     n2: 10
 };
 console.log(mutiplyNumbers(someNumbers));
+//narrowing
+// checagem de tipos
+function doSonething(info) {
+    if (typeof info == "number") {
+        console.log(`o numero è ${info}`);
+        return;
+    }
+    console.log("Não foi passado um número");
+}
+doSonething(5);
+doSonething(true);
+//generics
+function showArraysitens(arr) {
+    arr.forEach((item) => {
+        console.log(`ITEM:${item}`);
+    });
+}
+const a1 = [1, 2, 3];
+const a2 = ["a", "b", "c"];
+showArraysitens(a1);
+showArraysitens(a2);
